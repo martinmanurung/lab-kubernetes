@@ -4,7 +4,13 @@ Lab kluster Kubernetes otomatis menggunakan **Vagrant** dan **Oracle VirtualBox*
 
 ---
 
-## 1. Topologi Kluster
+## 1. Tujuan Project
+
+Project ini bertujuan menyediakan lingkungan lab Kubernetes lokal yang mudah dibuat dan dihapus untuk mempelajari arsitektur kluster, hubungan antara control plane dan worker node, serta proses deployment aplikasi pada beberapa node.
+
+![Diagram arsitektur lab kluster Kubernetes](./image.png)
+
+## 2. Topologi Kluster
 
 | Node Name | Peran | IP Address | vCPU | RAM | Disk Location |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -19,7 +25,7 @@ Lab kluster Kubernetes otomatis menggunakan **Vagrant** dan **Oracle VirtualBox*
 
 ---
 
-## 2. Prasyarat & Konfigurasi Disk Eksternal
+## 3. Prasyarat & Konfigurasi Disk Eksternal
 
 ### A. Arahkan Direktori VM VirtualBox ke Drive D:
 Pastikan VirtualBox menyimpan seluruh disk dan mesin virtual baru ke `D:\VirtualBox VMs`:
@@ -42,7 +48,7 @@ $env:VAGRANT_HOME = "D:\.vagrant.d"
 
 ---
 
-## 3. Menjalankan Kluster
+## 4. Menjalankan Kluster
 
 Buka terminal PowerShell di folder ini (`C:\Users\marti\Programming\lab-kubernetes`), lalu jalankan:
 
@@ -58,7 +64,7 @@ vagrant up
 
 ---
 
-## 4. Mengakses dan Memverifikasi Kluster
+## 5. Mengakses dan Memverifikasi Kluster
 
 ### Masuk ke Control Plane via SSH
 ```powershell
@@ -99,7 +105,7 @@ kubectl delete deployment test-nginx
 
 ---
 
-## 5. Perintah Manajemen Kluster (Siklus Hidup VM)
+## 6. Perintah Manajemen Kluster (Siklus Hidup VM)
 
 | Perintah | Deskripsi |
 | :--- | :--- |
@@ -112,7 +118,7 @@ kubectl delete deployment test-nginx
 
 ---
 
-## 6. Menggunakan Kubectl dari Windows Host (Opsional)
+## 7. Menggunakan Kubectl dari Windows Host (Opsional)
 File `kubeconfig` otomatis disalin ke folder lokal `shared/kubeconfig`.
 Jika Anda memiliki `kubectl.exe` terpasang di Windows, Anda dapat berinteraksi langsung tanpa SSH:
 ```powershell

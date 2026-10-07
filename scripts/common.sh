@@ -27,7 +27,7 @@ sysctl --system
 
 # 4. Instal containerd runtime dari repository Docker
 apt-get update -y
-apt-get install -y ca-certificates curl gnupg lsb-release apt-transport-https
+apt-get install -y ca-certificates curl gnupg lsb-release apt-transport-https conntrack ebtables ethtool socat iptables iproute2
 
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg --yes
