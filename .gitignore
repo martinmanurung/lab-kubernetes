@@ -1,0 +1,6 @@
+# Vagrant cache & VM state
+.vagrant/
+
+# Generated Kubernetes cluster files
+shared/*
+!shared/.gitkeep
